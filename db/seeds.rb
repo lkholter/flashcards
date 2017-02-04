@@ -11,9 +11,8 @@ unless User.count > 0
               password: 'password',
               password_confirmation: 'password'
 end
-puts 'XXX'
+
 unless Card.count > 0
-puts 'YYY'
   Card.create name: 'Sazerac',
               cocktail_type: 'classic',
               ingredients: '2oz rye whiskey, 1 tsp gomme syrup, 1 tsp Peychauds',
