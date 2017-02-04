@@ -11,14 +11,18 @@ unless User.count > 0
               password: 'password',
               password_confirmation: 'password'
 end
-
+puts 'XXX'
 unless Card.count > 0
-  Card.create 
-  # t.s   "name"
-  # t.string   "cocktail_type"
-  # t.datetime "created_at",    null: false
-  # t.datetime "updated_at",    null: false
-  # t.text     "ingredients"
-  # t.string   "mix_method"
-  # t.string   "garnish"
+puts 'YYY'
+  Card.create name: 'Sazerac'
+  #             cocktail_type: 'classic',
+  #             ingredients: '2oz rye whiskey, 1 tsp gomme syrup, 1 tsp Peychauds',
+  #             mix_method: 'stir',
+  #             garnish: 'lemon peel express'
+  #
+  # Card.create name: 'Margarita',
+  #             cocktail_type: 'classic',
+  #             ingredients: '1.5oz tequila, 1oz lime juice, .5oz Cointreau, .25oz simple syrup',
+  #             mix_method: 'shake',
+  #             garnish: 'salted rim and lime'
 end
