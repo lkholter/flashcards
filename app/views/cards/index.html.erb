@@ -1,13 +1,16 @@
 <header class="page-header">
   <h1> cards </h1>
+  <%= link_to %>
 </header>
 
 
 <% @cards.each do |card| %>
   <div class="card-container">
-    <p><%= card.name %></p>
-    <p><%= card.ingredients %></p>
-    <p><%= card.mix_method %></p>
-    <p><%= card.garnish %></p>
+    <div class="card">
+      <p><%= card.name %></p>
+      <p><%= card.ingredients %></p>
+      <p><%= card.mix_method %></p>
+      <p><%= card.garnish %></p>
+    </div>
   </div>
 <% end %>
