@@ -1,4 +1,4 @@
-class CardsController < ActionController::Base
+class CardsController < ApplicationController
   def index
     @cards = Card.all
   end
