@@ -1,15 +1,10 @@
 unless User.count > 0
   User.create first_name: 'Harry',
-              last_name: 'Potter',
-              email: 'test@test.com',
-              password: 'password',
-              password_confirmation: 'password'
+              last_name: 'Potter'
 
   User.create first_name: 'Jesse',
-              last_name: 'Potter',
-              email: 'test2@test.com',
-              password: 'password',
-              password_confirmation: 'password'
+              last_name: 'Potter'
+
 end
 
 unless Card.count > 0
