@@ -1,0 +1,9 @@
+<div class="row">
+  <div class="col-xs-12 col-md-5">
+    <h1>New Card</h1>
+    <%= simple_form_for @card do |f| %>
+      <%= f.input :name, placeholder: 'Name', label: false %>
+      <%= f.button :submit, 'Create card', class: 'btn-primary' %>
+    <% end %>
+  </div>
+</div>

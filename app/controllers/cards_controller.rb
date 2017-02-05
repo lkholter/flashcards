@@ -1,5 +1,5 @@
 class CardsController < ApplicationController
-  before_action :find_record, except: [:index, :create]
+  before_action :find_record, except: [:index, :create, :new]
 
   def index
     @cards = Card.all
@@ -9,6 +9,7 @@ class CardsController < ApplicationController
   end
 
   def new
+    @card =  Card.new
   end
 
   def create
