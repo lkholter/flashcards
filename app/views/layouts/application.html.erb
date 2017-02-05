@@ -10,6 +10,8 @@
 
   <body>
 
+    <%= render partial: 'layouts/navbar' %>
+
     <% if notice %>
       <p class="alert alert-success"><%= notice %></p>
     <% end %>
@@ -17,7 +19,9 @@
       <p class="alert alert-danger"><%= alert %></p>
     <% end %>
 
-    <%= yield %>
+    <div class="container-fluid">
+        <%= yield %>
+    </div>
 
 
     <% if user_signed_in? %>
