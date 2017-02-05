@@ -14,6 +14,11 @@
       <p><%= card.mix_method %></p>
       <p><%= card.garnish %></p>
     </div>
-  
+    <%= button_to 'Remove',
+                card_path(card.id),
+                class: 'btn btn-sm btn-secondary',
+                method: :delete,
+                data: {confirm: 'Are you sure?'} %>
+
   </div>
 <% end %>

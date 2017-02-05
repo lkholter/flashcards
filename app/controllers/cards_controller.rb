@@ -34,7 +34,13 @@ class CardsController < ApplicationController
   end
 
   def destroy
-
+    unless @card.destroy
+      flash[:notice] = 'Card successfully deleted.'
+      redirect_to cards_path
+    else
+      flash[:error] = errors
+      redirect_to cards_path
+    end
   end
 
   private
