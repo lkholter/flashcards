@@ -10,7 +10,7 @@ end
 unless Card.count > 0
   Card.create name: 'Sazerac',
               cocktail_type: 'classic',
-              ingredients: '2oz rye whiskey, 1 tsp gomme syrup, 1 tsp Peychauds',
+              ingredients: '2oz rye whiskey, 1 tsp gomme syrup, 1 tsp Peychauds, 4 dashes Angostura',
               mix_method: 'stir',
               garnish: 'lemon peel express'
 
@@ -18,5 +18,5 @@ unless Card.count > 0
               cocktail_type: 'classic',
               ingredients: '1.5oz tequila, 1oz lime juice, .5oz Cointreau, .25oz simple syrup',
               mix_method: 'shake',
-              garnish: 'salted rim and lime'
+              garnish: 'salted rim and lime wedge'
 end

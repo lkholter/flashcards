@@ -1,5 +1,5 @@
 class Card < ApplicationRecord
-  METHOD_TYPES = %w(shake stir).freeze
+  METHOD_TYPES = %w(Shake Stir).freeze
 
   belongs_to :user, optional: true
 

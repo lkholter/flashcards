@@ -14,6 +14,9 @@ class CardsController < ApplicationController
   end
 
   def create
+    @card = Card.new(card_params)
+    @card.save
+    redirect_to action: 'index'
   end
 
   def edit
@@ -22,9 +25,16 @@ class CardsController < ApplicationController
   def update
   end
 
+  def destroy
+  end
+
   private
 
-  def find_record
-    @card = Card.find params[:id] if params[:id]
+    def  card_params
+      params.require(:card).permit(:name, :ingredients, :mix_method, :garnish)
+    end
+
+    def find_record
+      @card = Card.find params[:id] if params[:id]
+    end
   end
-end
