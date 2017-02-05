@@ -10,6 +10,7 @@ class CardsController < ApplicationController
 
   def new
     @card =  Card.new
+    @mix_method_collection = Card::METHOD_TYPES
   end
 
   def create
