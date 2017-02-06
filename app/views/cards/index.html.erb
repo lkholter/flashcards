@@ -14,7 +14,7 @@
       <p><%= card.mix_method %></p>
       <p><%= card.garnish %></p>
     </div>
-    <%= button_to 'Edit',
+    <%= link_to 'Edit',
                   edit_card_path(card.id),
                   class: 'btn btn-sm btn-primary' %>
     <%= button_to 'Remove',
