@@ -1,7 +1,9 @@
+
+
 .flip {
   -webkit-perspective: 800;
-   width: 400px;
-   height: 200px;
+   width: 500px;
+   height: 300px;
     position: relative;
     margin: 50px auto;
 }
@@ -28,14 +30,16 @@
 .flip .card .front {
   position: absolute;
   z-index: 1;
-    background: black;
+    background: teal;
     color: white;
     cursor: pointer;
 }
 .flip .card .back {
   -webkit-transform: rotatey(-180deg);
     background: white;
-    color: black;
-    font-size: 14px;
+    color: teal;
+    font-size: 16px;
+    padding: 10px;
+    margin-top: 10px;
     cursor: pointer;
 }

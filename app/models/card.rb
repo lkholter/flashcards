@@ -5,6 +5,6 @@ class Card < ApplicationRecord
 
   validates :name,
             :ingredients, presence: true
-  validates :mix_method, inclusion: { in: METHOD_TYPES }
+  # validates :mix_method, inclusion: { in: METHOD_TYPES }
 
 end
