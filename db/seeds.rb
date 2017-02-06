@@ -1,13 +1,13 @@
-unless User.count > 0
-  User.create first_name: 'Harry',
-              last_name: 'Potter'
+# unless User.count > 0
+#   User.create first_name: 'Harry',
+#               last_name: 'Potter'
+#
+#   User.create first_name: 'Jesse',
+#               last_name: 'Potter'
+#
+# end
 
-  User.create first_name: 'Jesse',
-              last_name: 'Potter'
-
-end
-
-unless Card.count > 0
+# unless Card.count > 0
   Card.create name: 'Sazerac',
               cocktail_type: 'classic',
               ingredients: '2oz rye whiskey, 1 tsp gomme syrup, 1 tsp Peychauds, 4 dashes Angostura',
@@ -25,4 +25,4 @@ unless Card.count > 0
               ingredients: '1.5oz rye whiskey, 1oz dry vermouth, .75oz Campari, 2 dashes orange bitters',
               mix_method: 'stir',
               garnish: 'serve on a big cube, express orange peel'
-end
+# end
