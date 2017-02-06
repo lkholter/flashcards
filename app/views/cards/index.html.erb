@@ -7,18 +7,23 @@
 
 <% @cards.each do |card| %>
    <div class="card-container">
-     <div class="card">
-
+     <div class="flip">
+       <div class="card">
+          <div class="face front">
        <p><%= card.name %></p>
+     </div>
+     <div class="face back">
        <p><%= card.ingredients %></p>
        <p><%= card.mix_method %></p>
        <p><%= card.garnish %></p>
-
      </div>
+   </div>
 
-     <%= link_to 'Edit',
-                  edit_card_path(card.id),
-                  class: 'btn btn-sm btn-primary' %>
+ </div>
+ <%= link_to 'Edit',
+              edit_card_path(card.id),
+              class: 'btn btn-sm btn-primary' %>
+
 
   </div>
 <% end %>
