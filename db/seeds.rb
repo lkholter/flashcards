@@ -19,4 +19,10 @@ unless Card.count > 0
               ingredients: '1.5oz tequila, 1oz lime juice, .5oz Cointreau, .25oz simple syrup',
               mix_method: 'shake',
               garnish: 'salted rim and lime wedge'
+
+  Card.create name: 'Old Pal',
+              cocktail_type: 'classic',
+              ingredients: '1.5oz rye whiskey, 1oz dry vermouth, .75oz Campari, 2 dashes orange bitters',
+              mix_method: 'stir',
+              garnish: 'serve on a big cube, express orange peel'
 end
