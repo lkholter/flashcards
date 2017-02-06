@@ -1,0 +1,16 @@
+<%= simple_form_for @card do |f| %>
+
+  <div class="row">
+    <div class="col-xs-12 col-md-5">
+      <%= f.input :name, placeholder: 'Cocktail Name', label: false %>
+      <!-- <%= f.input :cocktail_type, placeholder: 'Cocktail Type ', label: false %> -->
+      <%= f.input :ingredients, placeholder: 'Ingredients', label: false %>
+      <%= f.input :mix_method,
+                  label: 'Mix method',
+                  collection: @mix_method_collection,
+                  selected: 'Stir' %>
+      <%= f.input :garnish, placeholder: 'How to serve', label: false %>
+      <%= f.button :submit, 'Create card', class: 'btn-primary' %>
+  <% end %>
+  </div>
+</div>

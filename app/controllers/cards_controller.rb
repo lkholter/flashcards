@@ -28,9 +28,15 @@ class CardsController < ApplicationController
   end
 
   def edit
+    @mix_method_collection = Card::METHOD_TYPES
   end
 
   def update
+    if @card.update(permitted_params)
+      redirect_to cards_path
+    else
+      render 'edit'
+    end
   end
 
   def destroy
