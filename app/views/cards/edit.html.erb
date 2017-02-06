@@ -1,3 +1,9 @@
-<h1>Edit your post</h1>
+<h1>Edit your card</h1>
 
 <%= render 'form' %>
+
+<%= button_to 'Remove',
+            card_path(@card.id),
+            class: 'btn btn-sm btn-secondary',
+            method: :delete,
+            data: {confirm: 'Are you sure?'} %>
