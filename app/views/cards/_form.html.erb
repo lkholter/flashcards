@@ -4,7 +4,12 @@
     <div class="col-xs-12 col-md-5">
       <%= f.input :name, placeholder: 'Cocktail Name', label: false %>
       <!-- <%= f.input :cocktail_type, placeholder: 'Cocktail Type ', label: false %> -->
-      <%= f.input :ingredients, placeholder: 'Ingredients', label: false %>
+      <%= f.input :first_ingredient, placeholder: 'Ingredients', label: false %>
+      <%= f.input :second_ingredient, placeholder: 'Ingredients', label: false %>
+      <%= f.input :third_ingredient, placeholder: 'Ingredients', label: false %>
+      <%= f.input :fourth_ingredient, placeholder: 'Ingredients', label: false %>
+      <%= f.input :fifth_ingredient, placeholder: 'Ingredients', label: false %>
+      <%= f.input :sixth_ingredient, placeholder: 'Ingredients', label: false %>
       <%= f.input :mix_method,
                   label: 'Mix method',
                   collection: @mix_method_collection,

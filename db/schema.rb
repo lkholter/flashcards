@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170205005250) do
+ActiveRecord::Schema.define(version: 20170207174648) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -18,11 +18,17 @@ ActiveRecord::Schema.define(version: 20170205005250) do
   create_table "cards", force: :cascade do |t|
     t.string   "name"
     t.string   "cocktail_type"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
-    t.text     "ingredients"
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
     t.string   "mix_method"
     t.string   "garnish"
+    t.integer  "user_id"
+    t.string   "first_ingredient"
+    t.string   "second_ingredient"
+    t.string   "third_ingredient"
+    t.string   "fourth_ingredient"
+    t.string   "fifth_ingredient"
+    t.string   "sixth_ingredient"
   end
 
   create_table "decks", force: :cascade do |t|

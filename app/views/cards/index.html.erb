@@ -10,10 +10,16 @@
      <div class="flip">
        <div class="card">
           <div class="face front">
-       <p><%= card.name %></p>
+            <span></span>
+       <span class = "card-name"><%= card.name %></span>
      </div>
      <div class="face back">
-       <p><%= card.ingredients %></p>
+       <p><%= card.first_ingredient %></p>
+       <p><%= card.second_ingredient %></p>
+       <p><%= card.third_ingredient %></p>
+       <p><%= card.fourth_ingredient %></p>
+       <p><%= card.fifth_ingredient %></p>
+       <p><%= card.sixth_ingredient %></p>
        <p><%= card.mix_method %></p>
        <p><%= card.garnish %></p>
      </div>
@@ -22,6 +28,7 @@
  </div>
  <%= link_to 'Edit',
               edit_card_path(card.id) %>
+
 
 
   </div>

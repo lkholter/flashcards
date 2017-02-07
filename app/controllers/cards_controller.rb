@@ -56,7 +56,7 @@ class CardsController < ApplicationController
     end
 
     def permitted_params
-      params.require(:card).permit(:name, :ingredients, :mix_method, :garnish)
+      params.require(:card).permit(:name, :first_ingredient, :second_ingredient, :third_ingredient, :fourth_ingredient, :fifth_ingredient, :sixth_ingredient, :mix_method, :garnish)
     end
 
     def find_record

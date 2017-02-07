@@ -4,7 +4,7 @@ class Card < ApplicationRecord
   belongs_to :user, optional: true
 
   validates :name,
-            :ingredients, presence: true
+            :first_ingredient,
+            :second_ingredient, presence: true
   # validates :mix_method, inclusion: { in: METHOD_TYPES }
-
 end
