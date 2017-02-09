@@ -1,5 +1,6 @@
-jQuery(document).on 'turbolinks:load', ->
+$(document).ready(function(){
   $('.scroller').slick({
     arrows: true,
     dots: false
   });
+}) 

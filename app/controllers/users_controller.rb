@@ -4,6 +4,8 @@ class UsersController < ApplicationController
   end
 
   def show
+    @user = current_user
+    @cards = @user.cards.all
   end
 
 

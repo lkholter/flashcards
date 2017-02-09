@@ -8,6 +8,7 @@ class CardsController < ApplicationController
 
   def show
     @user = current_user
+    @cards = @user.cards
   end
 
   def new
@@ -17,7 +18,7 @@ class CardsController < ApplicationController
   end
 
   def create
-    # @card = Card.new(permitted_params)
+    @user = current_user
     @card = @user.cards.new(permitted_params)
 
     if @card.save
@@ -30,11 +31,13 @@ class CardsController < ApplicationController
   end
 
   def edit
+    @user = current_user
     @mix_method_collection = Card::METHOD_TYPES
   end
 
   def update
-    if @card.update(permitted_params)
+    @user = current_user
+    if @user.cards.update(permitted_params)
       redirect_to cards_path
     else
       render 'edit'
@@ -42,7 +45,8 @@ class CardsController < ApplicationController
   end
 
   def destroy
-    unless @card.destroy
+    @user = current_user
+    unless @user.cards.destroy
       flash[:notice] = 'Card successfully deleted.'
       redirect_to cards_path
     else
@@ -54,14 +58,16 @@ class CardsController < ApplicationController
   private
 
     def errors
-      @card.errors.full_messages.to_sentence if @card
+      @user = current_user
+      @user.cards.errors.full_messages.to_sentence if @user.cards
     end
 
     def permitted_params
-      params.require(:card).permit(:name, :first_ingredient, :second_ingredient, :third_ingredient, :fourth_ingredient, :fifth_ingredient, :sixth_ingredient, :mix_method, :garnish)
+      params.require(:card).permit(:name, :first_ingredient, :second_ingredient, :third_ingredient, :fourth_ingredient, :fifth_ingredient, :sixth_ingredient, :mix_method, :garnish, :user_id)
     end
 
     def find_record
-      @card = Card.find params[:id] if params[:id]
+      @user = current_user
+      @card = @user.cards.find params[:id] if params[:id]
     end
   end
