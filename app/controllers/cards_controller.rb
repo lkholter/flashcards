@@ -3,8 +3,16 @@ class CardsController < ApplicationController
   before_action :find_record, except: [:index, :create, :new]
 
   def index
-    @cards = Card.all
+    @cards = Card.search(params[:term])
   end
+
+  # def index
+  #   @cards = if params[:term]
+  #     Card.where('name LIKE ?', "%#{params[:term]}%")
+  #   else
+  #     @cards = Card.all
+  #   end
+  # end
 
   def show
     @user = current_user
@@ -46,24 +54,25 @@ class CardsController < ApplicationController
 
   def destroy
     @user = current_user
-    unless @user.cards.destroy
+    @card = Card.find(params[:id])
+    if @card.destroy
       flash[:notice] = 'Card successfully deleted.'
       redirect_to cards_path
     else
-      flash[:error] = errors
-      redirect_to cards_path
+      # flash[:error] = errors
+      redirect_to edit_card_path
     end
   end
 
   private
 
-    def errors
-      @user = current_user
-      @user.cards.errors.full_messages.to_sentence if @user.cards
-    end
+    # def errors
+    #   @user = current_user
+    #   @user.cards.errors.full_messages.to_sentence if @user.cards
+    # end
 
     def permitted_params
-      params.require(:card).permit(:name, :first_ingredient, :second_ingredient, :third_ingredient, :fourth_ingredient, :fifth_ingredient, :sixth_ingredient, :mix_method, :garnish, :user_id)
+      params.require(:card).permit(:name, :first_ingredient, :second_ingredient, :third_ingredient, :fourth_ingredient, :fifth_ingredient, :sixth_ingredient, :mix_method, :garnish, :user_id, :term)
     end
 
     def find_record

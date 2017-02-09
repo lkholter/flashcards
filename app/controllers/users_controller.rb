@@ -8,5 +8,4 @@ class UsersController < ApplicationController
     @cards = @user.cards.all
   end
 
-
 end
