@@ -5,31 +5,36 @@
   </h1>
 </header>
 
-<% @cards.each do |card| %>
-   <div class="card-container">
-     <div class="flip">
-       <div class="card">
+
+<div class="scroller">
+
+  <% idx = 0 %>
+  <% @cards.each do |card| %>
+    <% idx += 1 %>
+    <div class="card-container item #{'active' if idx == 1}">
+      <div class="flip">
+        <div class="card">
           <div class="face front">
             <span></span>
-       <span class = "card-name"><%= card.name %></span>
-     </div>
-     <div class="face back">
-       <p><%= card.first_ingredient %></p>
-       <p><%= card.second_ingredient %></p>
-       <p><%= card.third_ingredient %></p>
-       <p><%= card.fourth_ingredient %></p>
-       <p><%= card.fifth_ingredient %></p>
-       <p><%= card.sixth_ingredient %></p>
-       <p><%= card.mix_method %></p>
-       <p><%= card.garnish %></p>
-     </div>
-   </div>
-
- </div>
- <%= link_to 'Edit',
-              edit_card_path(card.id) %>
+            <span class = "card-name"><%= card.name %></span>
+          </div>
 
 
+          <div class="face back">
+             <p><%= card.first_ingredient %></p>
+             <p><%= card.second_ingredient %></p>
+             <p><%= card.third_ingredient %></p>
+             <p><%= card.fourth_ingredient %></p>
+             <p><%= card.fifth_ingredient %></p>
+             <p><%= card.sixth_ingredient %></p>
+             <p><%= card.mix_method %></p>
+             <p><%= card.garnish %></p>
+          </div>
+        </div> <!-- Card -->
+      </div> <!-- Flip -->
+    </div> <!-- Card Container -->
+ <% end %>
+ <p> <%= link_to 'Edit',
+              edit_card_path(card.id) %> </p>
 
-  </div>
-<% end %>
+</div>

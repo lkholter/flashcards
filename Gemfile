@@ -33,6 +33,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'devise'
 gem 'simple_form'
 gem 'bootstrap-sass', '~> 3.3.6'
+gem "jquery-slick-rails"
 
 
 group :development, :test do
