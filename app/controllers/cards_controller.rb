@@ -1,4 +1,5 @@
 class CardsController < ApplicationController
+  load_and_authorize_resource  only: [:edit, :update, :destroy]
   before_action :find_record, except: [:index, :create, :new]
 
   def index
@@ -6,17 +7,18 @@ class CardsController < ApplicationController
   end
 
   def show
+    @user = current_user
   end
 
-
-
   def new
+    @user = current_user
     @card =  Card.new
     @mix_method_collection = Card::METHOD_TYPES
   end
 
   def create
-    @card = Card.new(permitted_params)
+    # @card = Card.new(permitted_params)
+    @card = @user.cards.new(permitted_params)
 
     if @card.save
       flash[:notice] = 'Card successfully created.'
