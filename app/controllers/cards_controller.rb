@@ -39,7 +39,7 @@ class CardsController < ApplicationController
   def update
     @user = current_user
     if @user.cards.update(permitted_params)
-      redirect_to cards_path
+      redirect_to user_path(current_user)
     else
       render 'edit'
     end
