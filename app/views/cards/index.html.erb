@@ -1,7 +1,7 @@
 <header class="page-header">
   <h1>
-    Cards
-    <span class='card-header-link'> <%= link_to 'new card', new_card_path %></span>
+    <span class='card-header-link'> <%= link_to 'New Card', new_card_path %></span>
+        <%= link_to 'My Cards', user_path(current_user) %>
   </h1>
 </header>
 
@@ -18,6 +18,7 @@
           </div>
 
           <div class="face back">
+            <span class = "recipe">
              <p><%= card.first_ingredient %></p>
              <p><%= card.second_ingredient %></p>
              <p><%= card.third_ingredient %></p>
@@ -26,12 +27,13 @@
              <p><%= card.sixth_ingredient %></p>
              <p><%= card.mix_method %></p>
              <p><%= card.garnish %></p>
+           </span>
 
           </div>
         </div> <!-- Card -->
       </div> <!-- Flip -->
       <% if current_user.id == card.user_id %>
-      <%= link_to 'Edit', edit_card_path(card) %>
+       <%= link_to 'Edit', edit_card_path(card) %>
       <% end %>
     </div> <!-- Card Container -->
  <% end %>

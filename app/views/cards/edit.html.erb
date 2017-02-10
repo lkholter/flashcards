@@ -2,8 +2,10 @@
 
 <%= render 'form' %>
 
+
+<br>
 <%= button_to 'Remove',
             card_path(@card.id),
-            class: 'btn btn-sm btn-secondary',
+            class: 'button',
             method: :delete,
             data: {confirm: 'Are you sure?'} %>

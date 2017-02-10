@@ -4,6 +4,49 @@
 @import 'card.scss';
 @import 'slick';
 @import 'slick-theme';
+@import url('https://fonts.googleapis.com/css?family=Arimo');
+@import url('https://fonts.googleapis.com/css?family=Londrina+Outline');
+body {
+  background: #243434;
+  color: #FFDEAD;
+}
+
+.navbar-left {
+  padding: 3px;
+  color: #243434;
+}
+.navbar-header {
+  background: #243434;
+  color: #FFDEAD;
+}
+
+p {
+  color: #243434;
+}
+
+.signup {
+  font-family: 'Londrina Outline', cursive;
+  color: #FFDEAD;
+   h1 {
+     font-size: 100px;
+     margin-left: 20px;
+   }
+  h2 {
+    font-size: 60px;
+    margin-left: 60px;
+  }
+
+}
+
+.card-name {
+  font-family: 'Arimo', sans-serif;
+  font-size: 50px;
+}
+
+.recipe {
+  font-family: 'Arimo', sans-serif;
+  font-size: 20px;
+}
 
 .scroller {
   div {
@@ -22,4 +65,37 @@
 
 .slick-prev {
   left: -5px;
+}
+
+
+.card-header-link {
+
+}
+
+
+/* User sign in and sign forms. */
+.border-form-div {
+  max-width: 300px;
+  padding: 19px 29px 29px;
+  margin: 100px auto 20px;
+  background-color:  #4C5A5A;
+  // border: 1px solid #e5e5e5;
+  -webkit-border-radius: 5px;
+     -moz-border-radius: 5px;
+          border-radius: 5px;
+  -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.05);
+     -moz-box-shadow: 0 1px 2px rgba(0,0,0,.05);
+          box-shadow: 0 1px 2px rgba(0,0,0,.05);
+}
+.border-form-div .form-signin-heading,
+.border-form-div .checkbox {
+  margin-bottom: 10px;
+}
+.border-form-div input[type="text"],
+.border-form-div input[type="email"],
+.border-form-div input[type="password"] {
+  font-size: 16px;
+  height: auto;
+  margin-bottom: 15px;
+  padding: 7px 9px;
 }

@@ -8,14 +8,14 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="/cards">Flashcards</a>
+      <span class="glyphicons glyphicons-glass"></span>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
         <li class="active">
-          <%= link_to 'My Cards', user_path(current_user) %>
+
         </li>
       </ul>
         <!-- <li><a href="#">Link</a></li>
@@ -38,15 +38,14 @@
         </div>
         <button type="submit" class="btn btn-default">Submit</button>
       </form> -->
-      <ul class="navbar-form navbar-left">
-        <%= form_tag(cards_path, method: :get) do %>
-        <%= text_field_tag :term, params[:term] %>
-        <%= submit_tag 'Search', name: nil %>
-        <% end %>
-      </ul>
+    <ul class="nav navbar-nav navbar-left">
+      <p><%= form_tag(cards_path, method: :get) do %>
+      <%= text_field_tag :term, params[:term] %>
+      <%= submit_tag 'Search', name: nil %></p>   
+      <% end %>
+    </ul>
 
       <ul class="nav navbar-nav navbar-right">
-
         <% if user_signed_in? %>
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
@@ -60,6 +59,7 @@
             </ul>
           </li>
         <% else %>
+        <ul class="dropdown-menu">
           <%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %>
           <%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %>
         <% end %>

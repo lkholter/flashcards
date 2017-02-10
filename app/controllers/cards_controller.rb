@@ -6,13 +6,6 @@ class CardsController < ApplicationController
     @cards = Card.search(params[:term])
   end
 
-  # def index
-  #   @cards = if params[:term]
-  #     Card.where('name LIKE ?', "%#{params[:term]}%")
-  #   else
-  #     @cards = Card.all
-  #   end
-  # end
 
   def show
     @user = current_user
